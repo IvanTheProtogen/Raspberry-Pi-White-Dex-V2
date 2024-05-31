@@ -5783,7 +5783,7 @@ end
 
 -- RbxApi Stuff
 
-local apiUrl = "http://setup.roblox.com/"..game:HttpGet("http://http://setup.roblox.com/versionQTStudio").."-API-Dump.json"
+local apiUrl = "http://anaminus.github.io/rbx/json/api/latest.json"
 local maxChunkSize = 100 * 1000
 local ApiJson
 if script:FindFirstChild("RawApiJson") then
