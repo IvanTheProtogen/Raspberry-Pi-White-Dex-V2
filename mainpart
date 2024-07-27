@@ -5783,7 +5783,7 @@ end
 
 -- RbxApi Stuff
 
-local apiUrl = "http://github.com/MaximumADHD/Roblox-Client-Tracker/raw/roblox/API-Dump.json" -- This API is the latest, have been put by Ivan.
+local apiUrl = "http://anaminus.github.io/rbx/json/api/latest.json"
 local maxChunkSize = 100 * 1000
 local ApiJson
 if script:FindFirstChild("RawApiJson") then
