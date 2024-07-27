@@ -2104,19 +2104,19 @@ SaveMapButton.MouseButton1Click:connect(function()
 
 	function saveProp(obj,prop,par)
 		local myProp = obj[prop]
-		if type(myProp) == "boolean" then
+		if typeof(myProp) == "boolean" then
 			local newProp = Instance.new("BoolValue",par)
 			newProp.Name = prop
 			newProp.Value = myProp
-		elseif type(myProp) == "number" then
+		elseif typeof(myProp) == "number" then
 			local newProp = Instance.new("IntValue",par)
 			newProp.Name = prop
 			newProp.Value = myProp
-		elseif type(myProp) == "string" then
+		elseif typeof(myProp) == "string" then
 			local newProp = Instance.new("StringValue",par)
 			newProp.Name = prop
 			newProp.Value = myProp
-		elseif type(myProp) == "userdata" then -- Assume Color3
+		elseif typeof(myProp) == "userdata" then -- Assume Color3
 			pcall(function()
 				local newProp = Instance.new("Color3Value",par)
 				newProp.Name = prop
@@ -2620,13 +2620,13 @@ local ExplorerIndex = {
 
 function Create(ty,data)
 	local obj
-	if type(ty) == 'string' then
+	if typeof(ty) == 'string' then
 		obj = Instance.new(ty)
 	else
 		obj = ty
 	end
 	for k, v in pairs(data) do
-		if type(k) == 'number' then
+		if typeof(k) == 'number' then
 			v.Parent = obj
 		else
 			obj[k] = v
@@ -2743,7 +2743,7 @@ local Icon do
 		local iconSize = 16
 
 		local class = 'Frame'
-		if type(IconFrame) == 'string' then
+		if typeof(IconFrame) == 'string' then
 			class = IconFrame
 			IconFrame = nil
 		end
@@ -4170,7 +4170,7 @@ function CreateCaution(title,msg)
 end
 
 function CreateTableCaution(title,msg)
-	if type(msg) ~= "table" then return CreateCaution(title,tostring(msg)) end
+	if typeof(msg) ~= "table" then return CreateCaution(title,tostring(msg)) end
 	local newCaution = TableCautionWindow:Clone()
 	newCaution.Title.Text = title
 	
@@ -4179,7 +4179,7 @@ function CreateTableCaution(title,msg)
 	
 	for i,v in pairs(msg) do
 		local newResult = TableTemplate:Clone()
-		newResult.Type.Text = type(v)
+		newResult.Type.Text = typeof(v)
 		newResult.Value.Text = tostring(v)
 		newResult.Position = UDim2.new(0,0,0,#TableList:GetChildren() * 20)
 		newResult.Parent = TableList
@@ -6267,7 +6267,7 @@ local Icon do
 		local iconSize = 16
 
 		local class = 'Frame'
-		if type(IconFrame) == 'string' then
+		if typeof(IconFrame) == 'string' then
 			class = IconFrame
 			IconFrame = nil
 		end
@@ -7079,13 +7079,13 @@ function SetZIndexOnChanged(object)
 end
 function Create(ty,data)
 	local obj
-	if type(ty) == 'string' then
+	if typeof(ty) == 'string' then
 		obj = Instance.new(ty)
 	else
 		obj = ty
 	end
 	for k, v in pairs(data) do
-		if type(k) == 'number' then
+		if typeof(k) == 'number' then
 			v.Parent = obj
 		else
 			obj[k] = v
@@ -7775,13 +7775,13 @@ function SetZIndexOnChanged(object)
 end
 function Create(ty,data)
 	local obj
-	if type(ty) == 'string' then
+	if typeof(ty) == 'string' then
 		obj = Instance.new(ty)
 	else
 		obj = ty
 	end
 	for k, v in pairs(data) do
-		if type(k) == 'number' then
+		if typeof(k) == 'number' then
 			v.Parent = obj
 		else
 			obj[k] = v
